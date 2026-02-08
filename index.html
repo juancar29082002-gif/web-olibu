@@ -2,129 +2,20 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>OLIBU Natural | Bienestar natural desde el origen</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OLIBU</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- WhatsApp flotante -->
-<a href="https://wa.me/51975455690" class="whatsapp" target="_blank">💬</a>
+<h1>Catálogo de Productos</h1>
 
-<!-- HEADER -->
-<header class="hero">
-  <nav class="navbar">
-    <h2 class="logo">OLIBU</h2>
-    <ul>
-      <li><a href="#productos">Productos</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#beneficios">Beneficios</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
+<div id="productos" class="productos"></div>
 
-  <div class="hero-text">
-    <h1>Bienestar natural desde el origen</h1>
-    <p>El poder del olivo en tu hogar</p>
-    <button onclick="irWhatsApp()">Comprar por WhatsApp</button>
-  </div>
-</header>
+<h2>🛒 Carrito</h2>
+<div id="carrito"></div>
 
-<!-- PRODUCTOS -->
-<section id="productos" class="section">
-  <h2>Nuestros Productos</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <h3>Aceite de Oliva Extra Virgen 500ml</h3>
-      <p>S/ 45.00</p>
-      <button onclick="agregarCarrito('Aceite de Oliva 500ml', 45)">
-        Agregar al carrito
-      </button>
-    </div>
-
-    <div class="card">
-      <h3>Aceite de Oliva Extra Virgen 1L</h3>
-      <p>S/ 80.00</p>
-      <button onclick="agregarCarrito('Aceite de Oliva 1L', 80)">
-        Agregar al carrito
-      </button>
-    </div>
-
-
-    <div class="card">
-      <h3>Pack Engreidor OLIBU
-
-
-<!-- NOSOTROS -->
-<section id="nosotros" class="section light">
-  <h2>Nuestra Historia</h2>
-  <p>
-    OLIBU es una marca familiar con raíces en el cultivo del olivo en el desierto peruano,
-    una tradición que se remonta a inicios del siglo XX.  
-    Nos guiamos por la honestidad, el respeto, el liderazgo y el servicio,
-    ofreciendo productos naturales de alta calidad.
-  </p>
-</section>
-
-<!-- BENEFICIOS -->
-<section id="beneficios" class="section">
-  <h2>Beneficios del Olivo</h2>
-
-  <ul class="beneficios">
-    <li>✔ Rico en antioxidantes y polifenoles</li>
-    <li>✔ Beneficia la salud cardiovascular</li>
-    <li>✔ Ideal para piel sensible</li>
-    <li>✔ Producto natural y ético</li>
-  </ul>
-</section>
-
-<!-- TESTIMONIOS -->
-<section class="section light">
-  <h2>Lo que dicen nuestros clientes</h2>
-
-  <div class="cards">
-    <div class="card">
-      <p>"Excelente calidad, se nota lo natural del producto."</p>
-      <strong>— Cliente OLIBU</strong>
-    </div>
-    <div class="card">
-      <p>"Los jabones son increíbles, mi piel lo agradece."</p>
-      <strong>— Cliente OLIBU</strong>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section id="contacto" class="section">
-  <h2>Contacto</h2>
-
-  <p>📍 Delivery en todo el Perú</p>
-  <p>📧 olibunatural@gmail.com</p>
-
-  <p>
-    Síguenos:
-    <a href="https://www.instagram.com/olibu_natural?igsh=MmgyZzc5bTk0b2Ns" target="_blank">Instagram</a> |
-    <a href="https://www.facebook.com/Olibunatural/?locale=es_LA" target="_blank">Facebook</a>
-  </p>
-</section>
-
-<div id="carrito" class="carrito">
-  <h3>🛒 Carrito</h3>
-  <ul id="lista-carrito"></ul>
-  <p><strong>Total: S/ <span id="total">0.00</span></strong></p>
-  <button onclick="comprarWhatsApp()">Comprar por WhatsApp</button>
-</div>
-
-
-
-<footer>
-  <p>© 2026 OLIBU Natural | Todos los derechos reservados</p>
-</footer>
+<h3>Total: S/ <span id="total">0.00</span></h3>
 
 <script src="script.js"></script>
 </body>
