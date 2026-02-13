@@ -1,402 +1,567 @@
-body {
+/* =========================================
+   VARIABLES DE COLOR
+========================================= */
+
+:root {
+  --verde-principal: #2e4d3c;
+  --verde-secundario: #3f6b54;
+  --verde-claro: #6d8f7a;
+  --beige: #f4f1ea;
+  --blanco: #ffffff;
+  --gris: #666;
+}
+
+/* =========================================
+   RESET GENERAL
+========================================= */
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Poppins', sans-serif;
+  background: var(--beige);
   color: #333;
 }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-}
+/* =========================================
+   CONTENEDOR GENERAL
+========================================= */
 
-a {
-  text-decoration: none;
-  color: #253602;
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
 }
 
 .section {
-  padding: 80px 10%;
-  text-align: center;
+  padding: 60px 0;
 }
 
 .light {
-  background: #3a5a0842;
+  background: #fafafa;
 }
 
-/* HERO */
+/* =========================================
+   HERO
+========================================= */
+
+/* =========================================
+   HERO CON IMAGEN Y ESPACIO PARA NAVBAR
+========================================= */
+
 .hero {
-  height: 100vh;
-  background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
-  url("img/fondo.png");
-  background-size: cover;
+  position: relative;
+  background: url("img/hero.jpg") center/cover no-repeat;
+  color: white;
+  padding: 160px 20px 100px 20px; /* espacio para navbar fija */
+  z-index: 1;
+}
+
+/* Capa oscura para mejor lectura */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+.hero {
+  position: relative;
+  background: url("img/fondo.png") center/cover no-repeat;
+  color: white;
+  padding: 100px 20px;
+  z-index: 1;
+}
+
+/* Capa oscura elegante encima */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+
+/* =========================================
+   NAVBAR FIJA PROFESIONAL
+========================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+
+  background: transparent;
+  transition: all 0.4s ease;
+}
+
+/* Estado cuando haces scroll */
+.navbar.scrolled {
+  background: rgba(46, 77, 60, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 12px 60px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Logo */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
   color: white;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 10%;
+.logo-img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
 }
+
+/* Menú */
 
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
-.logo {
-  font-weight: bold;
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
 }
+
+/* Línea animada debajo */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar a:hover {
+  opacity: 0.8;
+}
+
+
+/* Hero text */
 
 .hero-text {
-  margin-top: 150px;
-}
-
-.hero button {
-  padding: 15px 35px;
-  background: #b59b4c;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.hero button:hover {
-  background: #9c843c;
-}
-.hero-text {
-  max-width: 500px;
-  margin-left: 80px;
-  margin-top: 120px;
-  color: white;
-  
+  text-align: center;
 }
 
 .hero-text h1 {
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 15px;
+  font-size: 42px;
+  margin-bottom: 10px;
 }
 
-.hero-text h1 span {
-  color: #c6a74b;
-  text-shadow: 
-    1px 1px 2px rgba(0,0,0,0.6),
-    -1px -1px 2px rgba(0,0,0,0.6);
+.hero-text span {
+  display: block;
+  font-family: 'Playfair Display', serif;
 }
-
 
 .hero-text p {
+  margin-bottom: 20px;
   font-size: 18px;
-  margin-bottom: 30px;
-  opacity: 0.9;
 }
 
+/* Botón WhatsApp hero */
+
 .btn-whatsapp {
-  display: inline-block;
-  background: #c6a74b;
-  color: white;
-  padding: 14px 28px;
-  font-size: 16px;
-  border-radius: 40px;
+  background: white;
+  color: var(--verde-principal);
+  padding: 10px 20px;
+  border-radius: 30px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .btn-whatsapp:hover {
-  background: #a68b3a;
   transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 }
 
-/* CARDS */
+/* =========================================
+   FILTROS
+========================================= */
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 30px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categorias button {
+  padding: 8px 14px;
+  border: none;
+  background: var(--verde-secundario);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 5px 5px 5px 0;
+  transition: 0.25s;
+}
+
+.categorias button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+.categorias button.activa {
+  background: var(--verde-principal);
+}
+
+#buscador {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+}
+
+/* =========================================
+   PRODUCTOS
+========================================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
 .card {
-  width: 240px;              /* ancho fijo */
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   background: white;
-  transition: 0.3s ease;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.25s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.15);
 }
 
 .producto-img {
   width: 100%;
-  height: 160px;             /* controla altura de imagen */
+  height: 140px;
   object-fit: contain;
-}
-#lista-productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
+  margin-bottom: 8px;
 }
 
-
-
-/* BENEFICIOS */
-.beneficios {
-  list-style: none;
-  font-size: 18px;
+.card h3 {
+  font-size: 13px;
+  margin-bottom: 5px;
 }
 
-/* WHATSAPP */
+.card p {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* =========================================
+   BOTONES PROFESIONALES
+========================================= */
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+/* Botón Agregar */
+
+.card button {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+  color: white;
+  padding: 6px 10px;
+  font-size: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.card button:active {
+  transform: scale(0.95);
+}
+
+/* Botones carrito (+ -) */
+
+.item-carrito button {
+  background: #f1f1f1;
+  padding: 4px 8px;
+  font-weight: bold;
+}
+
+.item-carrito button:hover {
+  background: #ddd;
+  transform: scale(1.1);
+}
+
+/* Botón eliminar */
+
+.item-carrito button:last-child {
+  background: #c62828;
+  color: white;
+  font-size: 12px;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.item-carrito button:last-child:hover {
+  background: #e53935;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   CARRITO
+========================================= */
+
+.carrito {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100%;
+  background: white;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: -5px 0 10px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.carrito.activo {
+  right: 0;
+}
+
+.cerrar-carrito {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  float: right;
+  transition: 0.3s;
+}
+
+.cerrar-carrito:hover {
+  transform: rotate(90deg);
+  color: #c62828;
+}
+
+.item-carrito {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* =========================================
+   WHATSAPP FLOTANTE
+========================================= */
+
 .whatsapp {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #013213;
-  color: rgb(106, 83, 7);
-  font-size: 30px;
+  background: #25D366;
+  color: white;
   padding: 15px;
   border-radius: 50%;
+  font-size: 22px;
+  text-decoration: none;
+  z-index: 999;
+  transition: 0.3s;
 }
 
-/* FOOTER */
+.whatsapp:hover {
+  transform: scale(1.1);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
 footer {
-  background: #3e4b32;
-  color: white;
   text-align: center;
   padding: 20px;
-}
-
-.card button {
-  margin-top: 10px;
-  padding: 10px;
-  background: #6b8e23;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.card button:hover {
-  background: #556b2f;
-}
-
-/* CARRITO */
-#carrito {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 350px;
-  height: 100vh;
-  background: white;
-  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
-  padding: 20px;
-  overflow-y: auto;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-  z-index: 1000;
-}
-
-
-.item-carrito {
-  border-bottom: 1px solid #787000;
-  padding: 12px 0;
-}
-
-.item-carrito strong {
-  font-size: 14px;
-  display: block;
-  margin-bottom: 6px;
-}
-
-.item-carrito button {
-  background: #1f3d2b;
-  color: white;
-  border: none;
-  padding: 4px 8px;
-  font-size: 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 2px;
-  transition: 0.2s ease;
-}
-
-.item-carrito button:hover {
-  background: #c6a74b;
-  color: black;
-}
-
-.item-carrito button:last-child {
-  background: #c0392b;
-}
-
-.item-carrito button:last-child:hover {
-  background: #e74c3c;
-}
-
-
-.filtros {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 40px auto;
-  max-width: 1100px;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.categorias {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.categorias button {
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: none;
-  background: #eee;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 14px;
-}
-
-.categorias button.activa {
-  background: #1f3d2b;
+  background: var(--verde-principal);
   color: white;
 }
 
-#buscador {
-  padding: 10px 15px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  width: 250px;
-}
+/* =========================================
+   RESPONSIVE
+========================================= */
+
 @media (max-width: 768px) {
 
-  #lista-productos {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .card {
-    width: 90%;
-  }
-
-}
-@media (max-width: 768px) {
-
-  .hero-text {
-    margin: 80px 20px;
-    max-width: 100%;
   }
 
   .hero-text h1 {
     font-size: 28px;
   }
 
-  .hero-text p {
-    font-size: 14px;
+  .carrito {
+    width: 100%;
   }
-
 }
-@media (max-width: 768px) {
 
-  #carrito {
-    width: 90%;
-    right: 5%;
-    top: 80px;
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
-
 }
-@media (max-width: 768px) {
+/* =========================================
+   SECCIONES CENTRADAS Y ORDENADAS
+========================================= */
 
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
+#historia,
+#beneficios,
+#contacto {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
 }
-@media (max-width: 768px) {
 
-  .hero {
-    height: 75vh; 
+/* Texto historia más elegante */
+#historia p {
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Beneficios centrados correctamente */
+#beneficios ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+#beneficios li {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Contacto ordenado */
+#contacto p {
+  margin: 6px 0;
+}
+
+#contacto a {
+  display: inline-block;
+  margin: 6px 8px;
+}
+/* =========================================
+   NUESTRA HISTORIA - DISEÑO
+========================================= */
+
+#nosotros {
+  background: linear-gradient(135deg, #f3efe6, #e8e1d4);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Contenedor más ancho */
+#nosotros .container {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(60px);
+  animation: aparecerNosotros 1.2s ease forwards;
+}
+
+/* Título a la izquierda */
+#nosotros h2 {
+  font-size: 42px;
+  color: var(--verde-principal);
+  font-family: 'Playfair Display', serif;
+  position: relative;
+}
+
+/* Texto a la derecha */
+#nosotros p {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #444;
+}
+
+/* Fondo decorativo suave */
+#nosotros::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(46, 77, 60, 0.05);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+}
+
+/* Animación */
+@keyframes aparecerNosotros {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .hero-text {
-    margin: 60px 20px;
+/* Responsive */
+@media (max-width: 768px) {
+  #nosotros .container {
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .hero-text h1 {
-    font-size: 26px;
-    line-height: 1.2;
+  #nosotros h2::after {
+    margin: 15px auto 0 auto;
   }
-
-  .hero-text p {
-    font-size: 14px;
-  }
-
-  .btn-whatsapp {
-    padding: 12px 22px;
-    font-size: 14px;
-  }
-
 }
-@media (max-width: 768px) {
-
-#lista-productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-  .card {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .producto-img {
-    height: 120px;
-  }
-
-  .card h3 {
-    font-size: 13px;
-  }
-
-  .card p {
-    font-size: 13px;
-  }
-
-  .card button {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-}
-section {
-  padding: 60px 20px;
-}
-
-h2 {
-  margin-bottom: 30px;
-}
-.container {
-  max-width: 1200px;
-  margin: auto;
-}
-#carrito.activo {
-  transform: translateX(0);
-}
-@media (max-width: 768px) {
-
-  #carrito {
-    width: 100%;
-  }
-
-}
-.cerrar-carrito {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-}
-
