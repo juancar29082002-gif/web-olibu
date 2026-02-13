@@ -275,12 +275,44 @@ footer {
     width: 90%;
   }
 
+}
+@media (max-width: 768px) {
 
+  .hero-text {
+    margin: 80px 20px;
+    max-width: 100%;
+  }
 
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  #carrito {
+    width: 90%;
+    right: 5%;
+    top: 80px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+}
 @media (max-width: 768px) {
 
   .hero {
-    height: 75vh; /* antes seguro estaba 100vh */
+    height: 75vh; 
   }
 
   .hero-text {
