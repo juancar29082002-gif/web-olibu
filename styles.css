@@ -310,5 +310,64 @@ footer {
   }
 
 }
+@media (max-width: 768px) {
+
+  .hero {
+    height: 75vh; /* antes seguro estaba 100vh */
+  }
+
+  .hero-text {
+    margin: 60px 20px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .btn-whatsapp {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  #lista-productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .producto-img {
+    height: 120px;
+  }
+
+  .card h3 {
+    font-size: 13px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+
+  .card button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+}
+
 
 
