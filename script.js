@@ -83,7 +83,8 @@ function agregarCarrito(id) {
   }
 
   actualizarCarrito();
-  document.getElementById("carrito").style.display = "block";
+  document.getElementById("carrito").classList.add("activo");
+
 
 }
 
@@ -104,6 +105,9 @@ function eliminarProducto(id) {
   actualizarCarrito();
 }
 
+function cerrarCarrito() {
+  document.getElementById("carrito").classList.remove("activo");
+}
 
 
 
