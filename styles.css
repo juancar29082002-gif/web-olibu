@@ -565,3 +565,81 @@ footer {
     margin: 15px auto 0 auto;
   }
 }
+/* =========================================
+   FIX RESPONSIVE VERTICAL (MÓVIL)
+========================================= */
+
+@media (max-width: 768px) {
+
+  /* HERO */
+  .hero {
+    padding: 40px 15px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    font-size: 15px;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+
+  /* PRODUCTOS */
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .card {
+    padding: 8px;
+  }
+
+  .producto-img {
+    height: 120px;
+  }
+
+  .card h3 {
+    font-size: 12px;
+  }
+
+  .card p {
+    font-size: 12px;
+  }
+
+  .card button {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  /* SECCIÓN NOSOTROS */
+  #nosotros {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  #nosotros p {
+    font-size: 14px;
+  }
+
+  /* CARRITO */
+  .carrito {
+    width: 100%;
+  }
+
+}
+
