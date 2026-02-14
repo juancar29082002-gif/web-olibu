@@ -590,19 +590,7 @@ footer {
   }
 
 }
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(46, 77, 60, 0.95);
-  backdrop-filter: blur(6px);
-}
 
-.hero {
-  min-height: 100vh;
-  padding-top: 120px;
-}
 
 
 
