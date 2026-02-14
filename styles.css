@@ -1,15 +1,15 @@
-/* =====================================================
-   OLIBU NATURAL - DISEÑO PROFESIONAL COMPLETO
-   ===================================================== */
+/* ==================================================
+   OLIBU NATURAL - VERSIÓN ESTABLE FINAL
+   ================================================== */
 
 /* ===== VARIABLES ===== */
 :root {
   --verde: #2e4d3c;
+  --verde-oscuro: #1f3629;
   --verde-claro: #3f6b54;
   --beige: #f4f1ea;
-  --blanco: #ffffff;
   --gris: #666;
-  --sombra: 0 8px 25px rgba(0,0,0,0.1);
+  --blanco: #ffffff;
 }
 
 /* ===== RESET ===== */
@@ -23,13 +23,14 @@ body {
   font-family: 'Poppins', sans-serif;
   background: var(--beige);
   color: #333;
+  line-height: 1.6;
 }
 
-/* ===== NAVBAR ===== */
+/* ================= NAVBAR ================= */
 .navbar {
   background: var(--verde);
   color: white;
-  padding: 15px 40px;
+  padding: 18px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,25 +39,27 @@ body {
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 30px;
 }
 
 .navbar a {
   color: white;
   text-decoration: none;
+  font-weight: 500;
 }
 
-/* ===== HERO ===== */
+/* ================= HERO ================= */
 .hero {
   position: relative;
-  height: 90vh;
+  height: 85vh;
   background: url("img/fondo.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.hero-overlay {
+.hero::before {
+  content: "";
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.45);
@@ -66,19 +69,21 @@ body {
   position: relative;
   text-align: center;
   color: white;
+  max-width: 700px;
 }
 
 .hero-content h1 {
-  font-size: 45px;
+  font-size: 48px;
+  margin-bottom: 15px;
 }
 
 .btn-hero {
   display: inline-block;
   margin-top: 20px;
   padding: 14px 30px;
+  border-radius: 30px;
   background: #25D366;
   color: white;
-  border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
@@ -86,12 +91,11 @@ body {
 
 .btn-hero:hover {
   transform: translateY(-3px);
-  box-shadow: var(--sombra);
 }
 
-/* ===== SECCIONES ===== */
+/* ================= SECCIONES ================= */
 .section {
-  padding: 60px 20px;
+  padding: 70px 20px;
 }
 
 .container {
@@ -101,16 +105,17 @@ body {
 
 .titulo-seccion {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-/* ===== FILTROS ===== */
+/* ================= FILTROS ================= */
 .filtros {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 35px;
   flex-wrap: wrap;
-  margin-bottom: 30px;
+  gap: 20px;
 }
 
 .categorias {
@@ -121,7 +126,7 @@ body {
 
 .categorias button {
   padding: 10px 20px;
-  border-radius: 30px;
+  border-radius: 25px;
   border: 1px solid var(--verde);
   background: white;
   color: var(--verde);
@@ -135,7 +140,7 @@ body {
   color: white;
 }
 
-/* ===== BUSCADOR ===== */
+/* ================= BUSCADOR ================= */
 .buscador-container {
   position: relative;
 }
@@ -155,27 +160,33 @@ body {
   transform: translateY(-50%);
 }
 
-/* ===== PRODUCTOS ===== */
+/* ================= PRODUCTOS ================= */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
 }
 
 .card {
   background: white;
-  padding: 20px;
+  padding: 22px;
   border-radius: 18px;
-  box-shadow: var(--sombra);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 380px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .producto-img {
-  height: 160px;
+  height: 170px;
   object-fit: contain;
+  margin-bottom: 15px;
 }
 
 .card button {
@@ -187,15 +198,9 @@ body {
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.card button:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--sombra);
-}
-
-/* ===== CARRITO ===== */
+/* ================= CARRITO ================= */
 .carrito {
   position: fixed;
   right: -400px;
@@ -204,8 +209,8 @@ body {
   height: 100%;
   background: white;
   padding: 20px;
-  box-shadow: -5px 0 20px rgba(0,0,0,0.2);
   transition: 0.4s;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.2);
   overflow-y: auto;
   z-index: 1000;
 }
@@ -225,52 +230,53 @@ body {
   cursor: pointer;
 }
 
-/* ===== BOTONES FLOTANTES ===== */
-.whatsapp,
+/* ================= BOTONES FLOTANTES ================= */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+}
+
 .btn-carrito-flotante {
   position: fixed;
   bottom: 20px;
-  padding: 15px;
-  border-radius: 50%;
-  color: white;
-  text-decoration: none;
-  box-shadow: var(--sombra);
-}
-
-.whatsapp {
-  left: 20px;
-  background: #25D366;
-}
-
-.btn-carrito-flotante {
   right: 20px;
   background: var(--verde);
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
 }
 
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 footer {
-  text-align: center;
-  padding: 20px;
   background: var(--verde);
   color: white;
-  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
 }
 
-/* ================= RESPONSIVE PERFECTO ================= */
+/* ================= RESPONSIVE (SOLO AJUSTES) ================= */
 @media (max-width: 768px) {
 
   .navbar {
     flex-direction: column;
     gap: 15px;
+    padding: 20px;
   }
 
   .navbar ul {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 15px;
   }
 
   .hero {
-    height: 60vh;
+    height: 55vh;
   }
 
   .hero-content h1 {
@@ -279,7 +285,7 @@ footer {
 
   .filtros {
     flex-direction: column;
-    gap: 20px;
+    align-items: stretch;
   }
 
   .buscador {
@@ -287,7 +293,7 @@ footer {
   }
 
   .cards {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .carrito {
