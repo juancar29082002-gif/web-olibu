@@ -227,19 +227,6 @@ body {
   font-weight: 500;
 }
 
-/* Icono lupa integrado */
-.buscador-container::before {
-  content: '';
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  font-size: 18px;
-  color: var(--gris);
-  pointer-events: none;
-}
-
 /* Efectos focus y hover */
 .buscador:focus {
   outline: none;
@@ -660,6 +647,7 @@ footer {
     padding: 40px 0;
   }
 }
+
 
 
 
