@@ -2,8 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>OLIBU Natural</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLIBU Natural</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,7 +14,7 @@
 <!-- ================= NAVBAR ================= -->
 <header class="navbar">
     <div class="logo">
-        <img src="img/logo.png" alt="Logo OLIBU">
+        <img src="img/logo.png" alt="Logo OLIBU" class="logo-img">
         <span>OLIBU</span>
     </div>
 
@@ -29,12 +31,14 @@
 
 <!-- ================= HERO ================= -->
 <section class="hero">
-    <div class="hero-overlay"></div>
-
     <div class="hero-content">
         <h1>Amor por la Tierra <span>Nuestra raíz</span></h1>
         <p>El poder del olivo en tu hogar</p>
-        <a href="https://wa.me/51975455690" target="_blank" class="btn-hero">
+
+        <!-- Botón principal WhatsApp -->
+        <a href="https://wa.me/51975455690"
+           target="_blank"
+           class="btn-hero">
             Comprar por WhatsApp
         </a>
     </div>
@@ -48,14 +52,22 @@
 
     <div class="filtros">
 
+        <!-- Categorías dinámicas desde JS -->
         <div class="categorias" id="menu-categorias"></div>
 
+        <!-- Buscador -->
         <div class="buscador-container">
-            <input type="text" id="buscador" class="buscador" placeholder="Buscar producto...">
+            <input
+                type="text"
+                id="buscador"
+                class="buscador"
+                placeholder="Buscar producto..."
+            >
         </div>
 
     </div>
 
+    <!-- Productos dinámicos desde JS -->
     <div class="cards" id="lista-productos"></div>
 
 </section>
@@ -65,7 +77,9 @@
 <section id="nosotros" class="section light container">
     <h2 class="titulo-seccion">Nuestra Historia</h2>
     <p>
-        OLIBU es una marca familiar con raíces en el cultivo del olivo en el desierto peruano...
+        OLIBU es una marca familiar con raíces en el cultivo del olivo
+        en el desierto peruano. Trabajamos con pasión para ofrecer
+        productos naturales de alta calidad.
     </p>
 </section>
 
@@ -86,14 +100,16 @@
 <section id="contacto" class="section container">
     <h2 class="titulo-seccion">Contacto</h2>
     <p>Delivery en todo el Perú</p>
-    <p>olibunatural@gmail.com</p>
+    <p>📧 olibunatural@gmail.com</p>
 </section>
 
 
 <!-- ================= CARRITO ================= -->
 <div id="carrito" class="carrito">
 
-    <button onclick="cerrarCarrito()" class="cerrar-carrito">×</button>
+    <button onclick="cerrarCarrito()" class="cerrar-carrito">
+        ×
+    </button>
 
     <h3>Carrito</h3>
 
@@ -111,17 +127,25 @@
 
 
 <!-- ================= BOTONES FLOTANTES ================= -->
-<a href="https://wa.me/51975455690" class="whatsapp" target="_blank">💬</a>
 
-<a href="#" id="btn-carrito-flotante" class="btn-carrito-flotante">
+<!-- WhatsApp -->
+<a href="https://wa.me/51975455690"
+   class="whatsapp"
+   target="_blank">
+    💬
+</a>
+
+<!-- Carrito -->
+<a href="#"
+   id="btn-carrito-flotante"
+   class="btn-carrito-flotante">
     🛒 <span id="contador-carrito">0</span>
 </a>
 
 
-<footer>
-    <p>© 2026 OLIBU Natural</p>
-</footer>
+<!-- ================= SCRIPTS ================= -->
 
+<!-- IMPORTANTE: productos.js debe ir antes de script.js -->
 <script src="productos.js"></script>
 <script src="script.js"></script>
 
