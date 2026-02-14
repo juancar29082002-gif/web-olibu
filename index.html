@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OLIBU Natural - Bienestar natural desde el origen</title>
-    
+
     <!-- FUENTES -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- BOTÓN WHATSAPP FLOTANTE - Cambia el número aquí -->
+
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
     <a href="https://wa.me/51975455690" class="whatsapp" target="_blank">💬</a>
-    
+
     <!-- BOTÓN CARRITO FLOTANTE -->
     <a href="#" id="btn-carrito-flotante" class="btn-carrito-flotante" title="Ver carrito">
         🛒 <span id="contador-carrito">0</span>
     </a>
 
+    <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo">
             <img src="img/logo.png" alt="Logo OLIBU" class="logo-img">
@@ -36,43 +38,48 @@
         </nav>
     </header>
 
-    <!-- HEADER HERO - Cambia aquí el texto principal -->
-    <header class="hero">
+    <!-- HERO -->
+    <section class="hero">
         <div class="hero-text">
-            <!-- Cambiar texto principal aquí -->
             <h1>Amor por la Tierra <span>Nuestra raíz</span></h1>
             <p>El poder del olivo en tu hogar</p>
-            <a href="https://wa.me/51975455690" class="btn-whatsapp">Comprar por WhatsApp</a>
+            <a href="#" class="btn-whatsapp" id="btn-whatsapp-hero">
+                Comprar por WhatsApp
+            </a>
         </div>
-    </header>
+    </section>
 
     <!-- PRODUCTOS -->
     <section id="productos" class="section container">
         <h2>Nuestros Productos</h2>
-        
-        <!-- FILTROS PROFESIONALES -->
+
         <div class="filtros">
             <div class="categorias" id="menu-categorias"></div>
-            <!-- Buscador profesional mejorado -->
+
             <div class="buscador-container">
-                <input type="text" id="buscador" class="buscador" placeholder="🔍 Buscar productos..." oninput="filtrarProductos()">
+                <input type="text"
+                       id="buscador"
+                       class="buscador"
+                       placeholder="Buscar productos...">
             </div>
         </div>
-        
-        <!-- Lista dinámica -->
+
         <div class="cards" id="lista-productos"></div>
     </section>
 
-    <!-- NOSOTROS - Cambia texto aquí -->
+    <!-- NOSOTROS -->
     <section id="nosotros" class="section container light">
         <h2>Nuestra Historia</h2>
-        <p>OLIBU es una marca familiar con raíces en el cultivo del olivo en el desierto peruano. Nos guiamos por la honestidad, el respeto, el liderazgo y el servicio, ofreciendo productos naturales de alta calidad.</p>
+        <p>
+            OLIBU es una marca familiar con raíces en el cultivo del olivo en el desierto peruano.
+            Nos guiamos por la honestidad, el respeto, el liderazgo y el servicio,
+            ofreciendo productos naturales de alta calidad.
+        </p>
     </section>
 
     <!-- BENEFICIOS -->
     <section id="beneficios" class="section container">
         <h2>Beneficios del Olivo</h2>
-        <!-- Puedes editar los beneficios aquí -->
         <ul class="beneficios">
             <li>Rico en antioxidantes y polifenoles</li>
             <li>Beneficia la salud cardiovascular</li>
@@ -81,12 +88,13 @@
         </ul>
     </section>
 
-    <!-- CONTACTO - Cambia datos aquí -->
+    <!-- CONTACTO -->
     <section id="contacto" class="section container">
         <h2>Contacto</h2>
         <p>Delivery en todo el Perú</p>
         <p>olibunatural@gmail.com</p>
-        <p>Síguenos 
+        <p>
+            Síguenos
             <a href="https://www.instagram.com/olibunatural" target="_blank">Instagram</a>
             <a href="https://www.facebook.com/Olibunatural" target="_blank">Facebook</a>
         </p>
@@ -98,7 +106,7 @@
         <h3>🛒 Carrito de Compras</h3>
         <ul id="lista-carrito"></ul>
         <p><strong>Total: S/ <span id="total">0.00</span></strong></p>
-        <button onclick="comprarWhatsApp()" class="btn-comprar-whatsapp">🟢 Comprar por WhatsApp</button>
+        <button onclick="comprarWhatsApp()">🟢 Comprar por WhatsApp</button>
     </div>
 
     <footer>
@@ -108,6 +116,14 @@
     <!-- JS -->
     <script src="productos.js"></script>
     <script src="script.js"></script>
+
+    <script>
+        // Botón WhatsApp Hero
+        document.getElementById('btn-whatsapp-hero').addEventListener('click', function(e){
+            e.preventDefault();
+            comprarWhatsApp();
+        });
+    </script>
+
 </body>
 </html>
-
