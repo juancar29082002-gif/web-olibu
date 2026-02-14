@@ -39,7 +39,7 @@ body {
 /* HERO - HERO CON IMAGEN Y ESPACIO PARA NAVBAR */
 .hero {
   position: relative;
-  background: url('img/logo.png') center/cover no-repeat;
+  background: url('img/fondo.png') center/cover no-repeat;
   color: white;
   padding: 160px 20px 100px; /* espacio para navbar fija */
   z-index: 1;
@@ -654,5 +654,6 @@ footer {
     padding: 40px 0;
   }
 }
+
 
 
