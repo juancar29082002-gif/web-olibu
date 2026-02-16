@@ -478,14 +478,9 @@ footer {
 }
 
 #nosotros .contenedor {
-  width: 100%;          /* ocupa todo */
-  max-width: 100%;      /* elimina límite */
-  padding: 80px 20px;   /* espacio interno */
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 0;     
-  box-shadow: none;     
-  text-align: center;
+   max-width: 100% !important;
 }
+
 
 #nosotros h2 {
   font-size: 42px;
@@ -577,6 +572,7 @@ footer {
   .whatsapp, .btn-carrito-flotante { width: 55px; height: 55px; font-size: 20px; }
   .btn-carrito-flotante { bottom: 80px; }
 }
+
 
 
 
