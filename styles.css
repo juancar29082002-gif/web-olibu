@@ -636,14 +636,23 @@ footer {
 }
 
 /* Línea decorativa debajo */
-.titulo-video::after {
-  content: "";
-  width: 70px;
-  height: 4px;
-  background: #4b6b3d;
-  display: block;
-  margin: 15px auto 0;
-  border-radius: 2px;
+.titulo-video {
+  font-size: 42px;
+  font-weight: 700;
+  color: #2f4f3e;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+/* Estado cuando se activa */
+.titulo-video.activo {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Animación elegante */
@@ -657,6 +666,7 @@ footer {
     transform: translateY(0);
   }
 }
+
 
 
 
