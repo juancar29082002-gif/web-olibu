@@ -198,3 +198,18 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('buscador').addEventListener('input', filtrarProductos);
 });
 
+// Animación del título al hacer scroll
+const tituloVideo = document.querySelector(".titulo-video");
+
+function mostrarTitulo() {
+  const posicion = tituloVideo.getBoundingClientRect().top;
+  const alturaPantalla = window.innerHeight;
+
+  if (posicion < alturaPantalla - 100) {
+    tituloVideo.classList.add("activo");
+  }
+}
+
+window.addEventListener("scroll", mostrarTitulo);
+window.addEventListener("load", mostrarTitulo);
+
