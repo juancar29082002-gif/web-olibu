@@ -1,4 +1,5 @@
 /* VARIABLES GLOBALES */
+
 let categoriaActual = 'Todos';
 let carrito = [];
 let totalCarrito = 0;
@@ -199,3 +200,4 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 });
+
