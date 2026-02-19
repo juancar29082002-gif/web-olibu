@@ -198,9 +198,7 @@ document.addEventListener("click", function(e) {
   }
 });
     });
-  }
-
-});
+;
 
 /* EFECTO NAVBAR SCROLL */
 window.addEventListener('scroll', function() {
@@ -214,4 +212,3 @@ window.addEventListener('scroll', function() {
     navbar.classList.remove('scrolled');
   }
 });
-
