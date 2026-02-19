@@ -258,10 +258,8 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('buscador').addEventListener('input', filtrarProductos);
 
   /* ===== INTEGRACIÓN CULQI ===== */
-const btnPagar = document.getElementById("btn-pagar");
-
-if (btnPagar) {
-  btnPagar.onclick = function () {
+document.addEventListener("click", function(e) {
+  if (e.target && e.target.id === "btn-pagar") {
 
     if (totalCarrito <= 0) {
       alert("El carrito está vacío");
@@ -274,7 +272,7 @@ if (btnPagar) {
     }
 
     const culqi = new CulqiCheckout({
-      publicKey: "TU_PUBLIC_KEY_REAL",
+      publicKey: "TU_PUBLIC_KEY_AQUI",
       settings: {
         title: "Olibu",
         currency: "PEN",
@@ -283,7 +281,8 @@ if (btnPagar) {
     });
 
     culqi.open();
-  };
-}
+  }
+});
   
+
 
