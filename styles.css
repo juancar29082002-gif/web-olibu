@@ -1,7 +1,8 @@
 /* VARIABLES DE COLOR */
 :root {
-  --verde-principal: #2e4d3c;
-  --verde-secundario: #3f6b54;
+
+  --verde-principal: #035F2D;
+  --verde-secundario: #048A3D;
   --verde-claro: #6d8f7a;
   --beige: #f4f1ea;
   --blanco: #ffffff;
@@ -722,6 +723,7 @@ html {
   font-size: 18px;
   color: #444;
 }
+
 
 
 
