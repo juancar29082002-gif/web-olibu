@@ -613,6 +613,51 @@ footer {
 }
 
 
+/* ========================= */
+/* SECCIÓN VIDEO PREMIUM */
+/* ========================= */
+
+.video-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+/* Título profesional */
+.titulo-video {
+  font-size: 42px;
+  font-weight: 700;
+  color: #2f4f3e;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+  animation: fadeSlideUp 1s ease forwards;
+  opacity: 0;
+}
+
+/* Línea decorativa debajo */
+.titulo-video::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: #4b6b3d;
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* Animación elegante */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 
