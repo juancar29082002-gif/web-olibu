@@ -132,13 +132,14 @@ body {
 /* TEXTO */
 .logo span {
   display: inline-block;
-  margin-left: 18px;
+  margin-left: 15px;
   font-family: 'Playfair Display', serif;
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 2px;
   color: white;
-}
+  position: relative;
+  top: -4px; 
 
 /* Menú */
 .navbar ul {
@@ -734,6 +735,7 @@ html {
   font-size: 18px;
   color: #444;
 }
+
 
 
 
