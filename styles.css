@@ -227,6 +227,10 @@ body {
   border-radius: 12px;
   text-align: center;
   transition: 0.25s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* el botón abajo */
 }
 
 .card:hover {
@@ -759,6 +763,7 @@ nav ul li a {
 nav ul li a:hover {
   opacity: 0.8;
 }
+
 
 
 
