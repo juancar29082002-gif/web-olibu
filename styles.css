@@ -138,8 +138,6 @@ body {
   font-weight: 600;
   letter-spacing: 2px;
   color: white;
-  position: relative;
-  top: -6px; 
 
 /* Menú */
 .navbar ul {
@@ -735,6 +733,7 @@ html {
   font-size: 18px;
   color: #444;
 }
+
 
 
 
